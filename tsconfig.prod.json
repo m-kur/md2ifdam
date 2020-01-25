@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "es6",
+        "module": "commonjs",
+        "strict": true,
+        "removeComments": true,
+        "lib" :[
+            "es6",
+            "dom"
+        ]
+    },
+    "exclude": [
+        "src/**/__tests__/*",
+        "node_modules"
+    ]
+}

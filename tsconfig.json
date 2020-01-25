@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "es6",
+        "module": "commonjs",
+        "sourceMap": true,
+        "strict": true,
+        "lib" :[
+            "es6",
+            "dom"
+        ],
+        "types": [
+            "jest",
+            "node"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

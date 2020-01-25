@@ -1,0 +1,63 @@
+{
+    "name": "md2ifdam",
+    "version": "0.1.1",
+    "private": true,
+    "license": "MIT",
+    "author": "masataka-kurihara",
+    "scripts": {
+        "clean:ts": "rimraf dist",
+        "clean:cc": "cmake-js clean",
+        "clean": "yarn run clean:ts && yarn run clean:cc",
+        "build:ts": "yarn run clean:ts && tsc -p tsconfig.prod.json",
+        "build:cc": "cmake-js rebuild",
+        "build": "yarn run build:ts && yarn run build:cc",
+        "lint": "tslint --project ./ './src/**/*.ts'",
+        "test": "jest --config=./package.json",
+        "package": "yarn run build && node package-json.js",
+        "print-configure": "yarn run cmake-js print-configure --debug"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "ts",
+            "js",
+            "json"
+        ],
+        "testMatch": [
+            "**/__tests__/*\\.(spec|test)\\.ts"
+        ],
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        }
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "bindings": "^1.3.0",
+        "cmake-js": "^3.7.3",
+        "d3": "^5.4.0",
+        "dagre": "^0.8.2",
+        "fontkit": "^1.7.7",
+        "jsdom": "^11.10.0",
+        "lodash": "^4.17.10",
+        "markdown-it": "^8.4.1",
+        "markdown-it-footnote": "^3.0.1",
+        "nan": "^2.10.0",
+        "yargs": "^11.0.0"
+    },
+    "devDependencies": {
+        "@types/d3": "^5.0.0",
+        "@types/dagre": "^0.7.40",
+        "@types/jest": "^22.2.3",
+        "@types/jsdom": "^11.0.4",
+        "@types/lodash": "^4.14.108",
+        "@types/markdown-it": "^0.0.4",
+        "@types/node": "^10.0.6",
+        "@types/rimraf": "^2.0.2",
+        "@types/yargs": "^11.0.0",
+        "jest": "^22.4.3",
+        "rimraf": "^2.6.2",
+        "ts-jest": "^22.4.6",
+        "tslint": "^5.10.0",
+        "tslint-config-airbnb": "^5.8.0",
+        "typescript": "^2.8.3"
+    }
+}
